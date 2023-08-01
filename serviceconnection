@@ -1,0 +1,25 @@
+
+{
+  "data": {},
+  "name": "dockerteste1",
+  "type": "dockerregistry",
+  "url": "https://hub.docker.com/",
+  "authorization": {
+    "parameters": {
+      "username": "lwcristianoaquino",
+      "password": "Cris@9t!Cris@9t!"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "serviceEndpointProjectReferences": [
+    {
+      "projectReference": {
+        "id": "f34ac179-3565-4ae3-a010-47a22a9271cd",
+        "name": "coxinha"
+      },
+      "name": "dockerteste1"
+    }
+  ]
+}
