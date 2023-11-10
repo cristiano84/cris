@@ -1,0 +1,48 @@
+#!/bin/bash
+# author: Cristiano Aquino
+# purpose: get all machines from Deployment Pool project
+
+PAT= {Persoal Access Token value}
+
+curl -s -u :$PAT  \
+        -X POST https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.1-preview.2 \
+        -H 'content-type: application/json' \
+        -H 'accept: application/json;api-version=5.0-preview.2;excludeUrls=true' \
+        --data-binary {
+	"data": {
+		"authorizationType": "ServiceAccount"
+	},
+	"name": "teste11",
+	"type": "kubernetes",
+	"url": "url cluster",
+	"createdBy": {
+		"displayName": "Cristiano Aquino",
+		"id": "fe135fd5-b964-4450-8f23-b0d577af9741",
+		"uniqueName": "cristiano.aquino@fabrica.locaweb.com.br"
+	},
+	"description": "It's just a test",
+	"authorization": {
+		"parameters": {
+			"isCreatedFromSecretYaml": "Create in cluster",
+			"serviceAccountCertificate": "xxx==",
+			"apitoken": "xxx="
+		},
+		"scheme": "Token"
+	},
+	"isShared": true,
+	"isOutdated": false,
+	"isReady": true,
+	"owner": "Library",
+	"serviceEndpointProjectReferences": [{
+		"projectReference": {
+			"id": "xxx",
+			"name": "devops"
+		},
+		"name": "teste07",
+		"description": "It's just a test"
+	}]
+}
+
+
+
+##        -X PUT https://dev.azure.com/locaweb/devops/_apis/serviceendpoint/endpoints?api-version=7.0-preview.1 \
